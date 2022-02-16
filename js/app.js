@@ -1,49 +1,47 @@
-document.getElementById('calculate-btn').addEventListener('click', function () {
-    const incomeInput = document.getElementById('income-input');
-    const incomeAmount = incomeInput.value;
+function inputValue(iteam) {
+    const Input = document.getElementById(iteam + '-input');
+    return Input;
+
+}
+
+function calculateMoney() {
+    const incomeInput = inputValue('income')
+    const foodInput = inputValue('food');
+    const rentInput = inputValue('rent');
+    const clothesInput = inputValue('clothes');
+    // add all expenses
+    const totalExpenses =
+        parseFloat(foodInput.value) +
+        parseFloat(rentInput.value) +
+        parseFloat(clothesInput.value);
+
+    if (totalExpenses > 0 && totalExpenses != '') {
+        const totalExpensesElement = document.getElementById('total-expenses');
+        totalExpensesElement.innerText = totalExpenses
+        // update the balance input
+        const balance = document.getElementById('balance');
+        balance.innerText = incomeInput.value - totalExpenses
+    }
+    else {
+        alert('can not find the result')
+    }
 
 
-    const foodInput = document.getElementById('food-input');
-    const foodAmount = foodInput.value;
+}
+// saving part
 
-
-    const rentInput = document.getElementById('rent-input');
-    const rentAmount = rentInput.value;
-
-    const clothesInput = document.getElementById('clothes-input');
-    const clothesAmount = clothesInput.value;
-
-    const totalExpenses = parseFloat(foodAmount) + parseFloat(rentAmount) + parseFloat(clothesAmount);
-
-
-    const totalExpensesElement = document.getElementById('total-expenses');
-    totalExpensesElement.innerText = totalExpenses;
-
-
-    const balance = document.getElementById('balance');
-    balance.innerText = incomeAmount - totalExpenses
-
-
-})
-
-document.getElementById('saving').addEventListener('click', function () {
-    // saving iteam
-    const incomeInput = document.getElementById('income-input');
-    const incomeAmount = incomeInput.value;
-
-
-    const savingInput = document.getElementById('saving-input');
-    const savingInputValue = savingInput.value;
-
+function savingAmount() {
+    const incomeInput = inputValue('income');
+    const savingInput = inputValue('saving');
 
     const savingAmount = document.getElementById('saving-amount');
-    savingAmount.innerText = incomeAmount * (savingInputValue) / 100;
+    savingAmount.innerText = incomeInput.value * (savingInput.value) / 100;
 
-
-    // remaining iteam
+    // remaining balance 
     const remainingbalance = document.getElementById('remaning-balance');
+
     remainingbalance.innerText = balance.innerText - savingAmount.innerText;
 
 
 
-})
+}
