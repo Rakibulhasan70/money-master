@@ -28,5 +28,20 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 })
 
 document.getElementById('saving').addEventListener('click', function () {
-    console.log('sohag')
+    // saving iteam
+    const incomeInput = document.getElementById('income-input');
+    const incomeAmount = incomeInput.value;
+
+
+    const savingInput = document.getElementById('saving-input');
+    const savingInputValue = savingInput.value;
+
+
+    const savingAmount = document.getElementById('saving-amount');
+    savingAmount.innerText = incomeAmount * (savingInputValue) / 100;
+
+
+    // remaining iteam
+
+
 })
