@@ -15,7 +15,7 @@ function calculateMoney() {
         parseFloat(rentInput.value) +
         parseFloat(clothesInput.value);
 
-    if (totalExpenses > 0 && totalExpenses != '') {
+    if (totalExpenses < balance && totalExpenses != '') {
         const totalExpensesElement = document.getElementById('total-expenses');
         totalExpensesElement.innerText = totalExpenses
         // update the balance input
@@ -33,14 +33,21 @@ function calculateMoney() {
 function savingAmount() {
     const incomeInput = inputValue('income');
     const savingInput = inputValue('saving');
+    const balance = document.getElementById('balance');
 
-    const savingAmount = document.getElementById('saving-amount');
-    savingAmount.innerText = incomeInput.value * (savingInput.value) / 100;
+    if (savingAmount < balance) {
+        const savingAmount = document.getElementById('saving-amount');
+        savingAmount.innerText = incomeInput.value * (savingInput.value) / 100;
 
-    // remaining balance 
-    const remainingbalance = document.getElementById('remaning-balance');
+        // remaining balance 
+        const remainingbalance = document.getElementById('remaning-balance');
 
-    remainingbalance.innerText = balance.innerText - savingAmount.innerText;
+        remainingbalance.innerText = balance.innerText - savingAmount.innerText;
+    }
+    else {
+        alert('can not match the result')
+    }
+
 
 
 
