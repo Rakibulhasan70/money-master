@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="mb-3">
         <h1 class="fs-1" style="text-align: center;">Calculate Money </h1>
     </header>
 
@@ -24,9 +24,32 @@
             <div class="col-lg-7">
                 <img class="img-fluid" src="images/money.jpeg" alt="">
             </div>
-            <div class="col-lg-5">
-                <h3 style="text-align: center;">Income</h3>
+            <div style="text-align: center;" class=" col-lg-5">
+                <h3>Income</h3>
+                <br>
+                <label for="name" class="form-label fs-5">Income :</label>
                 <input type="text" name="" id="">
+                <br>
+                <br>
+                <!-- expenses iteam -->
+                <h4 class="mb-3">Expenses</h4>
+                <!-- food -->
+                <label for="name" class="mb-3 form-label fs-5">Food :</label>
+                <input type="text" name="" id="">
+                <br>
+                <!-- rent -->
+                <label for="name" class="mb-3 form-label fs-5">Rent :</label>
+                <input type="text" name="" id="">
+                <br>
+                <!-- clothes -->
+                <label for="name" class="mb-3 form-label fs-5 ">Clothes :</label>
+                <input type="text" name="" id="">
+                <br>
+                <button class=" mb-3 button px-5 py-2 bg-primary rounded border text-white fs-5">Calculate</button>
+                <br>
+                <h4>Total Expenses:<span> 00</span> </h4>
+                <br>
+                <h4>Balance:<span> 00</span> </h4>
             </div>
         </div>
 
