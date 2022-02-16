@@ -3,7 +3,6 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const incomeAmount = incomeInput.value;
 
 
-
     const foodInput = document.getElementById('food-input');
     const foodAmount = foodInput.value;
 
@@ -42,6 +41,9 @@ document.getElementById('saving').addEventListener('click', function () {
 
 
     // remaining iteam
+    const remainingbalance = document.getElementById('remaning-balance');
+    remainingbalance.innerText = balance.innerText - savingAmount.innerText;
+
 
 
 })
