@@ -15,14 +15,22 @@ function calculateMoney() {
         parseFloat(rentInput.value) +
         parseFloat(clothesInput.value);
     debugger
-    if (incomeInput.value > 0 && foodInput.value > 0 && rentInput.value > 0 && clothesInput.value > 0) {
+
+    if (totalExpenses > incomeInput.value) {
+        alert('can not find the ans')
+    }
+
+    else if (incomeInput.value > 0 && foodInput.value > 0 && rentInput.value > 0 && clothesInput.value > 0) {
         const totalExpensesElement = document.getElementById('total-expenses');
         totalExpensesElement.innerText = totalExpenses
         // update the balance input
         const balance = document.getElementById('balance');
         balance.innerText = incomeInput.value - totalExpenses
     }
+
+
     else {
+        (isNaN(incomeInput.value && foodInput.value && rentInput.value && clothesInput.value))
         alert('can not find the result')
     }
 
