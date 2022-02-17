@@ -14,8 +14,8 @@ function calculateMoney() {
         parseFloat(foodInput.value) +
         parseFloat(rentInput.value) +
         parseFloat(clothesInput.value);
-
-    if (totalExpenses < balance && totalExpenses != '') {
+    debugger
+    if (incomeInput.value > 0 && foodInput.value > 0 && rentInput.value > 0 && clothesInput.value > 0) {
         const totalExpensesElement = document.getElementById('total-expenses');
         totalExpensesElement.innerText = totalExpenses
         // update the balance input
@@ -34,11 +34,11 @@ function savingAmount() {
     const incomeInput = inputValue('income');
     const savingInput = inputValue('saving');
     const balance = document.getElementById('balance');
+    debugger
+    const savingAmount = document.getElementById('saving-amount');
+    savingAmount.innerText = incomeInput.value * (savingInput.value) / 100;
 
-    if (savingAmount < balance) {
-        const savingAmount = document.getElementById('saving-amount');
-        savingAmount.innerText = incomeInput.value * (savingInput.value) / 100;
-
+    if (savingAmount.innerText < balance.innerText) {
         // remaining balance 
         const remainingbalance = document.getElementById('remaning-balance');
 
