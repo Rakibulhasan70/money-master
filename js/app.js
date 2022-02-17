@@ -47,7 +47,6 @@ function savingAmount() {
     const savingAmount = document.getElementById('saving-amount');
     savingAmount.innerText = incomeInput.value * (savingInput.value) / 100;
     // show error message when saving amount is bigger than income amount 
-    debugger
     if (savingAmount.innerText < balance.innerText && savingAmount.innerText < 100 && savingAmount.innerText > 0) {
         // remaining balance part
         const remainingbalance = document.getElementById('remaning-balance');
