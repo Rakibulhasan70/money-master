@@ -14,11 +14,13 @@ function calculateMoney() {
         parseFloat(foodInput.value) +
         parseFloat(rentInput.value) +
         parseFloat(clothesInput.value);
-    debugger
 
+    // show error message when income is less than expenses cost
     if (totalExpenses > incomeInput.value) {
         alert('can not find the ans')
     }
+
+    // show the valid calculation when all input value is positive number
 
     else if (incomeInput.value > 0 && foodInput.value > 0 && rentInput.value > 0 && clothesInput.value > 0) {
         const totalExpensesElement = document.getElementById('total-expenses');
@@ -28,35 +30,29 @@ function calculateMoney() {
         balance.innerText = incomeInput.value - totalExpenses
     }
 
-
+    // show error message when all input value is string and negative number
     else {
         (isNaN(incomeInput.value && foodInput.value && rentInput.value && clothesInput.value))
         alert('can not find the result')
     }
-
-
 }
-// saving part
+// saving balance part
 
 function savingAmount() {
     const incomeInput = inputValue('income');
     const savingInput = inputValue('saving');
     const balance = document.getElementById('balance');
-    debugger
+
     const savingAmount = document.getElementById('saving-amount');
     savingAmount.innerText = incomeInput.value * (savingInput.value) / 100;
-
-    if (savingAmount.innerText < balance.innerText) {
-        // remaining balance 
+    // show error message when saving amount is bigger than income amount 
+    debugger
+    if (savingAmount.innerText < balance.innerText && savingAmount.innerText < 100 && savingAmount.innerText > 0) {
+        // remaining balance part
         const remainingbalance = document.getElementById('remaning-balance');
-
         remainingbalance.innerText = balance.innerText - savingAmount.innerText;
     }
     else {
         alert('can not match the result')
     }
-
-
-
-
 }
