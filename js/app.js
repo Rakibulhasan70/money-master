@@ -50,9 +50,10 @@ function savingAmount() {
     if (savingAmount.innerText < balance.innerText && savingAmount.innerText < 100 && savingAmount.innerText > 0) {
         // remaining balance part
         const remainingbalance = document.getElementById('remaning-balance');
-        remainingbalance.innerText = balance.innerText - savingAmount.innerText;
+        remainingbalance.innerText = balance.innerText - parseFloatsavingAmount.innerText;
     }
     else {
         alert('can not match the result')
+        savingAmount.innerText = '00';
     }
 }
